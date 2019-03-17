@@ -7,28 +7,32 @@
     tools:context=".MainActivity">
 
     <?xml version="1.0" encoding="utf-8" ?>
-    <selector xmlns:android="http://schemas.android.com/apk/res/android">
-        <!--  Non focused states
-         -->
-        <item android:state_focused="false" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/button_unfocused" />
-        <item android:state_focused="false" android:state_selected="true" android:state_pressed="false" android:drawable="@drawable/button_unfocused" />
-        <!--  Focused states
-         -->
-        <item android:state_focused="true" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/button_focus" />
-        <item android:state_focused="true" android:state_selected="true" android:state_pressed="false" android:drawable="@drawable/button_focus" />
-        <!--  Pressed
-         -->
-        <item android:state_pressed="true" android:drawable="@drawable/button_press" />
-    </selector>
 
-    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-        <stroke android:width="1dp" android:color="#FF404040" />
+    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_marginEnd="411dp"
+        android:layout_marginRight="411dp"
+        android:layout_marginBottom="731dp"
+        android:shape="rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <stroke
+            android:width="1dp"
+            android:color="#FF404040" />
+
         <corners android:radius="6dp" />
-        <gradient android:startColor="#FF6800" android:centerColor="#FF8000" android:endColor="#FF9700" android:angle="90" />
+
+        <gradient
+            android:angle="90"
+            android:centerColor="#FF8000"
+            android:endColor="#FF9700"
+            android:startColor="#FF6800" />
     </shape>
 
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/attributes_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="true"
