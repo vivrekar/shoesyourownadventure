@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <?xml version="1.0" encoding="utf-8" ?>
-
     <ScrollView
         android:id="@+id/attributes_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="wrap_content"
         android:clipToPadding="true"
         android:fillViewport="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,13 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/adventure_radius_map"
-                android:layout_width="421dp"
-                android:layout_height="193dp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="77dp" />
 
             <TextView
                 android:id="@+id/adventure_settings_title"
@@ -249,7 +240,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorTeal"
+        android:background="@color/teal"
         android:text="Begin Adventure   →"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toBottomOf="parent"
