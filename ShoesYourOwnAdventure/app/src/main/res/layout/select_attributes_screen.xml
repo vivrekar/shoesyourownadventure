@@ -6,14 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <?xml version="1.0" encoding="utf-8" ?>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <!--  Non focused states
+         -->
+        <item android:state_focused="false" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/button_unfocused" />
+        <item android:state_focused="false" android:state_selected="true" android:state_pressed="false" android:drawable="@drawable/button_unfocused" />
+        <!--  Focused states
+         -->
+        <item android:state_focused="true" android:state_selected="false" android:state_pressed="false" android:drawable="@drawable/button_focus" />
+        <item android:state_focused="true" android:state_selected="true" android:state_pressed="false" android:drawable="@drawable/button_focus" />
+        <!--  Pressed
+         -->
+        <item android:state_pressed="true" android:drawable="@drawable/button_press" />
+    </selector>
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+        <stroke android:width="1dp" android:color="#FF404040" />
+        <corners android:radius="6dp" />
+        <gradient android:startColor="#FF6800" android:centerColor="#FF8000" android:endColor="#FF9700" android:angle="90" />
+    </shape>
+
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="true"
         android:fillViewport="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,14 +46,14 @@
             android:orientation="vertical">
 
             <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
+                android:id="@+id/adventure_radius_map"
                 android:layout_width="421dp"
                 android:layout_height="193dp"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="77dp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/adventure_settings_title"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_marginStart="32dp"
@@ -37,8 +62,8 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Adventure Settings"
-                android:textFontWeight="400px"
-                app:layout_constraintBottom_toTopOf="@+id/mapView"
+                android:textFontWeight="600px"
+                app:layout_constraintBottom_toTopOf="@+id/adventure_radius_map"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.136"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +71,7 @@
                 app:layout_constraintVertical_bias="0.372" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/adventure_radius_title"
                 android:layout_width="147dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="32dp"
@@ -54,14 +79,14 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="279dp"
-                android:text="Trip Distance (Mi)"
+                android:text="Trip Radius (Mi)"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mapView" />
+                app:layout_constraintTop_toBottomOf="@+id/adventure_settings_title" />
 
             <SeekBar
-                android:id="@+id/seekBar3"
+                android:id="@+id/adventure_radius_slider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="281dp"
                 android:layout_height="45dp"
@@ -75,10 +100,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.201"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/adventure_radius_title" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/time_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -86,10 +111,10 @@
                 android:layout_marginTop="16dp"
                 android:text="Trip Duration"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+                app:layout_constraintTop_toBottomOf="@+id/adventure_radius_slider" />
 
             <SeekBar
-                android:id="@+id/seekBar2"
+                android:id="@+id/time_slider"
                 android:layout_width="288dp"
                 android:layout_height="44dp"
                 android:layout_marginStart="32dp"
@@ -98,15 +123,15 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintBottom_toTopOf="@+id/time_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.186"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/time_title"
                 app:layout_constraintVertical_bias="0.384" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/adventure_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -124,7 +149,7 @@
                 app:layout_constraintVertical_bias="0.686" />
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/adventure_type_title"
                 android:layout_width="267dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="32dp"
@@ -136,76 +161,122 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.108"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/adventure_type_text" />
+
+            <TextView
+                android:id="@+id/attributes_title"
+                android:layout_width="257dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="189dp"
+                android:layout_marginBottom="8dp"
+                android:text="What do you want to see?"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scrollView2"
+                app:layout_constraintVertical_bias="0.788" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp">
+
+                <TableRow
+                    android:layout_width="344dp"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/checkBox4"
+                        android:layout_width="121dp"
+                        android:layout_height="wrap_content"
+                        android:text="Coffee"
+                        tools:layout_editor_absoluteX="148dp"
+                        tools:layout_editor_absoluteY="653dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Restaurants"
+                        tools:layout_editor_absoluteX="34dp"
+                        tools:layout_editor_absoluteY="653dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nature"
+                        tools:layout_editor_absoluteX="34dp"
+                        tools:layout_editor_absoluteY="605dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Animals"
+                        tools:layout_editor_absoluteX="231dp"
+                        tools:layout_editor_absoluteY="653dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:id="@+id/checkBox6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Urban"
+                        tools:layout_editor_absoluteX="116dp"
+                        tools:layout_editor_absoluteY="605dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nightlife"
+                        tools:layout_editor_absoluteX="193dp"
+                        tools:layout_editor_absoluteY="605dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </TableLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="257dp"
-        android:layout_height="25dp"
+    <Button
+        android:id="@+id/go_button"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="175dp"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="189dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="What do you want to see?"
+        android:background="@color/colorTeal"
+        android:text="Begin Adventure   →"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.788" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nature"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="605dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Animals"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="653dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Restaurants"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="653dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coffee"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="653dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nightlife"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="605dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Urban"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="605dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </android.support.constraint.ConstraintLayout>
