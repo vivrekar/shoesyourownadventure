@@ -207,14 +207,24 @@ public class ConnectShoesActivity extends AppCompatActivity {
                 // Update connection status text field.
                 connectionStatusText.setText(resourceId);
                 // Update button functionality.
-                connectToNextButton.setText(R.string.next);
-                connectToNextButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent nextActivity = new Intent(ConnectShoesActivity.this, SelectAttributesActivity.class);
-                        startActivity(nextActivity);
-                    }
-                });
+                if (resourceId == R.string.connected) {
+                    connectToNextButton.setText(R.string.next);
+                    connectToNextButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent nextActivity = new Intent(ConnectShoesActivity.this, SelectAttributesActivity.class);
+                            startActivity(nextActivity);
+                        }
+                    });
+                } else {
+                    connectToNextButton.setText(R.string.connect);
+                    connectToNextButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            connect();
+                        }
+                    });
+                }
             }
         });
     }

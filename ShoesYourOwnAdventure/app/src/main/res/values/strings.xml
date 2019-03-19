@@ -5,6 +5,7 @@
     <!-- ConnectShoesActivity -->
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
+    <string name="connect">Connect</string>
     <string name="next">Next</string>
 
 </resources>
