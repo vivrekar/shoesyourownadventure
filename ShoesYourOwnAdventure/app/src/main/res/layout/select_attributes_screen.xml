@@ -38,9 +38,8 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:text="Adventure Settings"
-                android:textFontWeight="600px"
                 android:textSize="24sp"
-                app:fontFamily="sans-serif-black"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.136"
@@ -48,9 +47,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.372" />
 
+            <ImageView
+                android:id="@+id/preferences_image"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/preferences" />
+
             <TextView
                 android:id="@+id/adventure_radius_title"
-                android:layout_width="147dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -59,6 +64,7 @@
                 android:layout_marginRight="279dp"
                 android:text="Trip Radius (Mi)"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +96,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Trip Duration"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/adventure_radius_slider" />
 
@@ -122,6 +129,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="Trip Type"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.059"
@@ -158,6 +166,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="What do you want to see?"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
@@ -174,49 +183,22 @@
                 android:layout_marginBottom="16dp">
 
                 <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:id="@+id/coffee"
-                        android:layout_width="121dp"
-                        android:layout_height="wrap_content"
-                        android:text="Coffee"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="148dp"
-                        tools:layout_editor_absoluteY="653dp" />
-
-                    <CheckBox
-                        android:id="@+id/restaurants"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Restaurants"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="34dp"
-                        tools:layout_editor_absoluteY="653dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:id="@+id/nature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nature"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="34dp"
-                        tools:layout_editor_absoluteY="605dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <CheckBox
                         android:id="@+id/animals"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Animals"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="231dp"
-                        tools:layout_editor_absoluteY="653dp" />
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/architecture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Architecture"
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -224,22 +206,94 @@
                     android:layout_height="wrap_content">
 
                     <CheckBox
-                        android:id="@+id/urban"
+                        android:id="@+id/arts_and_culture"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Urban"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="116dp"
-                        tools:layout_editor_absoluteY="605dp" />
+                        android:text="Arts + Culture"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/coffee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Coffee"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food"
+                        android:textSize="18sp"/>
+
+                    <CheckBox
+                        android:id="@+id/historical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Historical"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/music"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Music"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/nature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nature"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <CheckBox
                         android:id="@+id/nightlife"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nightlife"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="193dp"
-                        tools:layout_editor_absoluteY="605dp" />
+                        android:text="Night Life"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/restaurants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Restaurants"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/shopping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shopping"
+                        android:textSize="18sp" />
+
+                    <CheckBox
+                        android:id="@+id/urban"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Urban"
+                        android:textSize="18sp" />
                 </TableRow>
 
             </TableLayout>
@@ -251,11 +305,9 @@
         android:id="@+id/go_button"
         style="@style/ButtonStyle"
         android:layout_width="175dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Begin Adventure   →"
         android:textAppearance="@style/TextAppearance.AppCompat"

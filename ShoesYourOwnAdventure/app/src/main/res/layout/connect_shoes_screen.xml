@@ -33,7 +33,6 @@
         android:text="Not Connected"
         android:textColor="@color/darkblue"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/connect_to_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
