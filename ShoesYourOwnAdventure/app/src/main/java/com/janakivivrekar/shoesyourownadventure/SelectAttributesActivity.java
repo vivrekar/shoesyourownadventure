@@ -11,7 +11,7 @@ public class SelectAttributesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_attributes_screen);
-        ScrollView attributesScrollView = findViewById(R.id.attributes_scroll_view);
+        ScrollView attributesScrollView = findViewById(R.id.evaluation_scroll_view);
         CheckBox nature = findViewById(R.id.nature);
         if (nature.isChecked()) {
             nature.setChecked(true);
