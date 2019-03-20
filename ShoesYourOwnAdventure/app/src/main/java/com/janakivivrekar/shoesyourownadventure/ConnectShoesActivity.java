@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class ConnectShoesActivity extends AppCompatActivity {
+    private final static String TARGET_DEVICE_NAME = "Adafruit Bluefruit LE"; // "AdventureShoe";
     private final static String TAG = ConnectShoesActivity.class.getSimpleName();
     private TextView connectionStatusText;
     private Button connectToNextButton;
@@ -89,15 +90,19 @@ public class ConnectShoesActivity extends AppCompatActivity {
         Set<BluetoothDevice> pairedDevices = myBluetooth.getBondedDevices();
         if (pairedDevices.isEmpty()) {
             Toast.makeText(getApplicationContext(), "No Paired Bluetooth Devices Found.", Toast.LENGTH_LONG).show();
-            return false;
         } else {
             ArrayList<BluetoothDevice> pairedDevicesList = new ArrayList();
             pairedDevicesList.addAll(pairedDevices);
             // Set target device to the first paired device (expected to be Feather)
             // TODO: create a screen for user to select which device to connect.
-            targetDevice = pairedDevicesList.get(0);
-            return true;
+            for (BluetoothDevice bluetoothDevice : pairedDevicesList) {
+                if (bluetoothDevice.getName().equals(TARGET_DEVICE_NAME)) {
+                    targetDevice = bluetoothDevice;
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
     /*

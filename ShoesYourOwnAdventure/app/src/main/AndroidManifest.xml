@@ -35,6 +35,10 @@
             android:label="Select Attributes Activity">
         </activity>
 
+        <activity android:name=".ActiveAdventureActivity"
+            android:label="Select Attributes Activity">
+        </activity>
+
         <service android:name=".BluetoothLeService"
             android:label="Bluetooth LE Service">
         </service>

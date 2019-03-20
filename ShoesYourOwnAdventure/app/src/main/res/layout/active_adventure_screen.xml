@@ -7,8 +7,8 @@
     tools:context=".WelcomeActivity">
 
     <TextView
-        android:id="@+id/enjoy_your_adventure"
-        android:layout_width="156dp"
+        android:id="@+id/adventure_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
@@ -17,14 +17,14 @@
         android:text="Enjoy your adventure!"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/active_adventure_graphic"
+        app:layout_constraintBottom_toBottomOf="@+id/adventure_graphic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.04" />
 
     <ImageView
-        android:id="@+id/active_adventure_graphic"
+        android:id="@+id/adventure_graphic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/enjoy_adventure" />
 
     <Button
-        android:id="@+id/pause_button"
+        android:id="@+id/pause_resume_button"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
@@ -48,7 +48,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/active_adventure_graphic"
+        app:layout_constraintTop_toBottomOf="@+id/adventure_graphic"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -64,8 +64,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/pause_button"
-        app:layout_constraintTop_toBottomOf="@+id/active_adventure_graphic"
+        app:layout_constraintStart_toEndOf="@+id/pause_resume_button"
+        app:layout_constraintTop_toBottomOf="@+id/adventure_graphic"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

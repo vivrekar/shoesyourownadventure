@@ -12,4 +12,10 @@
     <string name="next">Next</string>
     <string name="connect_text">First, let\'s connect to your shoes.</string>
 
+    <!-- ActiveAdventureActivity -->
+    <string name="active_text">Enjoy your adventure!</string>
+    <string name="pause">Pause</string>
+    <string name="paused_text">Take a break</string>
+    <string name="resume">Resume</string>
+
 </resources>

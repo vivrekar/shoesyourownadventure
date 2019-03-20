@@ -11,7 +11,7 @@
         android:layout_width="204dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="377dp"
         android:text="@string/connect_text"
@@ -19,24 +19,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/connect_to_next"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/connection_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="336dp"
-        android:layout_marginEnd="167dp"
+        android:layout_marginEnd="196dp"
         android:layout_marginBottom="16dp"
         android:text="Not Connected"
         android:textColor="@color/darkblue"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/connect_to_next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/connect_text" />
+        app:layout_constraintTop_toBottomOf="@+id/connect_text"
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/connect_to_next"
@@ -53,5 +54,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.984" />
+
+    <ImageView
+        android:id="@+id/connect_graphic"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="156dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_text"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/connected_icon" />
 
 </android.support.constraint.ConstraintLayout>
