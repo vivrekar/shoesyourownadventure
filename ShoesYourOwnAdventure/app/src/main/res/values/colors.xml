@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--color name="blue">#256eff</color -->
+    <!--color name="teal">#84DCC6</color -->
+    <!-- color name="pink">#f43a8b</color -->
+    <!-- color name="yellow">#fde74c</color -->
+    <!-- color name="white">#ffffff</color -->
+
     <color name="blue">#256eff</color>
-    <color name="teal">#84DCC6</color>
-    <color name="pink">#f43a8b</color>
-    <color name="yellow">#fde74c</color>
-    <color name="white">#ffffff</color>
+    <color name="darkblue">#3225ff</color>
+    <color name="green">#84dccb</color>
+    <color name="purple">#6c63ff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#898989</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

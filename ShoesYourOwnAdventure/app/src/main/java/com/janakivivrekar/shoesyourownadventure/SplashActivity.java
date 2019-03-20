@@ -9,9 +9,22 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread welcomeThread = new Thread() {
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+            @Override
+            public void run() {
+                try {
+                    super.run();
+                    sleep(2000);  //Delay of 2 seconds
+                } catch (Exception e) {
+
+                } finally {
+                    Intent intent = new Intent(SplashActivity.this, WelcomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        welcomeThread.start();
     }
 }

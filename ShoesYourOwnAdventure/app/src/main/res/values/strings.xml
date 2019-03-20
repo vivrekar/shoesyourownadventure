@@ -2,10 +2,14 @@
     <string name="app_name">ShoesYourOwnAdventure</string>
     <string name="empty"></string>
 
+    <!-- WelcomeActivity -->
+    <string name="welcome_text">Let your shoes lead you on an adventure</string>
+
     <!-- ConnectShoesActivity -->
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
     <string name="connect">Connect</string>
     <string name="next">Next</string>
+    <string name="connect_text">First, let\'s connect to your shoes.</string>
 
 </resources>
