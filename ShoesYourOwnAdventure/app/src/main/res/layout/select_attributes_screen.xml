@@ -35,7 +35,7 @@
                 android:layout_marginRight="16dp"
                 android:text="Adventure Settings"
                 android:textFontWeight="600px"
-                app:layout_constraintBottom_toTopOf="@+id/adventure_radius_map"
+                app:layout_constraintBottom_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.136"
                 app:layout_constraintStart_toStartOf="parent"
