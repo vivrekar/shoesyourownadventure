@@ -2,13 +2,8 @@ package com.janakivivrekar.shoesyourownadventure;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.TableLayout;
-
-import java.util.List;
 
 public class SelectAttributesActivity extends AppCompatActivity {
 
@@ -31,12 +26,5 @@ public class SelectAttributesActivity extends AppCompatActivity {
             AdventureAttribute nature = new AdventureAttribute("nature", true);
         }
     }
-
-
-
-
-
-
-
 
 }
